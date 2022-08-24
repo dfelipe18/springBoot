@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>App con Spring</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container mt-4 container-general">
+    <div class="col-sm-6">
+      <form th:action="@{/guardar}" th:object=${persona} method="POST">
+        <div class="card">
+          <div class="card-header">
+            <h2>Módulo Persona</h2>
+          </div>
+          <div class="card-body">
+            <div class="form-group">
+              <labe>ID</labe>
+              <input th:field="*{id}" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <labe>NOMBRES</labe>
+              <input th:field="*{name}" type="text" class="form-control">
+            </div>
+            <div class="form-group">
+              <labe>TELEFONO</labe>
+              <input th:field="*{telefono}" type="text" class="form-control">
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-success" type="submit" value="Guardar">Nuevo</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
